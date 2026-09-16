@@ -1,0 +1,345 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    /* ========================================
+       RESURF-INSPIRED CALM EDITORIAL SYSTEM
+       Tactile Design System 3.0 (Light Mode)
+       ======================================== */
+
+    /* Foundation — Warm Off-White / Fine Paper Canvas */
+    --background: #FAFAFA;
+    --background-secondary: #F4F4F5;
+    --background-tertiary: #ECECEE;
+    --card-surface: #FFFFFF;
+    --well-recess: #F4F4F5;
+
+    /* Content — Deep Charcoal & Warm Inks */
+    --foreground: #111111;
+    --foreground-secondary: #52525B;
+    --foreground-muted: #71717A;
+    --foreground-subtle: #A1A1AA;
+
+    /* Brand Accents — Ink Pill & Warm Amber */
+    --accent-primary: #111111;
+    --accent-primary-hover: #222222;
+    --accent-amber: #D97706;
+    --accent-amber-light: #FEF3C7;
+    --accent-warm-tag: #F59E0B;
+    --accent-green: #15803D;
+
+    /* Hairlines & Borders */
+    --border-hairline: rgba(0, 0, 0, 0.07);
+    --border-subtle: rgba(0, 0, 0, 0.04);
+    --border-focus: rgba(0, 0, 0, 0.20);
+    --rim-highlight: inset 0 1px 0 0 rgba(255, 255, 255, 0.80);
+
+    /* Clean Card Shadows */
+    --card-shadow: 0 1px 3px rgba(0, 0, 0, 0.04), 0 8px 24px -4px rgba(0, 0, 0, 0.04);
+    --card-shadow-hover: 0 4px 12px rgba(0, 0, 0, 0.06), 0 16px 36px -6px rgba(0, 0, 0, 0.06);
+    --floating-shadow: 0 12px 36px -8px rgba(0, 0, 0, 0.08), 0 2px 6px rgba(0, 0, 0, 0.04);
+
+    /* Glass Blur */
+    --glass-blur: blur(20px) saturate(150%);
+    --glass-bg: rgba(255, 255, 255, 0.82);
+    --glass-border: 1px solid rgba(0, 0, 0, 0.07);
+  }
+
+  html {
+    color-scheme: light;
+    background-color: var(--background);
+  }
+
+  html.lenis,
+  html.lenis body {
+    height: auto;
+  }
+
+  .lenis.lenis-smooth {
+    scroll-behavior: auto !important;
+  }
+
+  [data-lenis-prevent] {
+    overscroll-behavior: contain;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  body {
+    background-color: var(--background);
+    color: var(--foreground);
+    overflow-x: hidden;
+    font-feature-settings: "cv01", "cv02", "cv04", "calt";
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  ::selection {
+    background: rgba(0, 0, 0, 0.08);
+    color: #111111;
+  }
+}
+
+/* ============================================
+   Typography Helpers
+   ============================================ */
+.font-display-serif {
+  font-family: var(--font-instrument-serif), Georgia, serif;
+}
+
+.font-sans-ui {
+  font-family: var(--font-geist-sans), -apple-system, BlinkMacSystemFont, "SF Pro Text", sans-serif;
+}
+
+.font-editorial-body {
+  font-family: var(--font-inter), -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+.font-mono-code {
+  font-family: var(--font-jetbrains), var(--font-geist-mono), monospace;
+}
+
+/* ============================================
+   Resurf Floating Capsule Navbar
+   ============================================ */
+.nav-shell {
+  position: relative;
+  width: 100%;
+  border-radius: 9999px;
+  overflow: hidden;
+  cursor: default;
+  background-color: rgba(255, 255, 255, 0.86);
+  backdrop-filter: blur(20px) saturate(160%);
+  -webkit-backdrop-filter: blur(20px) saturate(160%);
+  box-shadow:
+    0 2px 16px rgba(0, 0, 0, 0.04),
+    0 1px 2px rgba(0, 0, 0, 0.02),
+    inset 0 1px 0 0 rgba(255, 255, 255, 0.90);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.nav-shell.is-scrolled {
+  background-color: rgba(255, 255, 255, 0.94);
+  box-shadow:
+    0 8px 32px -4px rgba(0, 0, 0, 0.08),
+    0 2px 8px rgba(0, 0, 0, 0.03),
+    inset 0 1px 0 0 rgba(255, 255, 255, 1);
+  border-color: rgba(0, 0, 0, 0.10);
+}
+
+/* ============================================
+   Resurf Calm Soft Cards
+   ============================================ */
+.resurf-card {
+  background-color: #FFFFFF;
+  border: 1px solid var(--border-hairline);
+  border-radius: 20px;
+  box-shadow: var(--card-shadow);
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.25s ease;
+}
+
+.resurf-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--card-shadow-hover);
+  border-color: rgba(0, 0, 0, 0.12);
+}
+
+/* Card inside Card / Recessed wells */
+.resurf-well {
+  background-color: #F4F4F5;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  border-radius: 14px;
+}
+
+/* ============================================
+   Buttons & Capsules
+   ============================================ */
+.btn-primary-pill {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 22px;
+  border-radius: 9999px;
+  background-color: #111111;
+  color: #FFFFFF;
+  font-weight: 500;
+  font-size: 14px;
+  letter-spacing: -0.01em;
+  transition: background-color 0.2s ease, transform 0.15s ease, box-shadow 0.2s ease;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12);
+}
+
+.btn-primary-pill:hover {
+  background-color: #27272A;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.btn-secondary-pill {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 22px;
+  border-radius: 9999px;
+  background-color: #FFFFFF;
+  color: #18181B;
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  font-weight: 500;
+  font-size: 14px;
+  letter-spacing: -0.01em;
+  transition: background-color 0.2s ease, border-color 0.2s ease, transform 0.15s ease;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
+}
+
+.btn-secondary-pill:hover {
+  background-color: #F4F4F5;
+  border-color: rgba(0, 0, 0, 0.20);
+  transform: translateY(-1px);
+}
+
+/* ============================================
+   Pill Badges
+   ============================================ */
+.tag-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 12px;
+  border-radius: 9999px;
+  font-size: 12px;
+  font-weight: 500;
+  background-color: #F4F4F5;
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  color: #52525B;
+}
+
+.tag-badge-amber {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 12px;
+  border-radius: 9999px;
+  font-size: 12px;
+  font-weight: 500;
+  background-color: #FEF3C7;
+  border: 1px solid #FDE68A;
+  color: #B45309;
+}
+
+/* ============================================
+   Marquee Animation
+   ============================================ */
+@keyframes marquee {
+  0% { transform: translateX(0%); }
+  100% { transform: translateX(-50%); }
+}
+
+.animate-marquee {
+  display: flex;
+  width: max-content;
+  animation: marquee 35s linear infinite;
+}
+
+.animate-marquee:hover {
+  animation-play-state: paused;
+}
+
+/* ============================================
+   Smooth Minimal Scrollbar
+   ============================================ */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--background);
+}
+
+::-webkit-scrollbar-thumb {
+  background: #D4D4D8;
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #A1A1AA;
+}
+
+/* ============================================
+   Device Sandbox Safeguards
+   ============================================ */
+.mac-sandbox button:focus,
+.mac-sandbox button:focus-visible,
+.mac-sandbox [tabindex]:focus,
+.mac-sandbox [tabindex]:focus-visible,
+.phone-sandbox button:focus,
+.phone-sandbox button:focus-visible,
+.phone-sandbox [tabindex]:focus,
+.phone-sandbox [tabindex]:focus-visible {
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+/* GPU Acceleration */
+.smooth-gpu {
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  will-change: transform, opacity;
+}
+
+/* ============================================
+   Resurf 1:1 Physics Animations & Shadow Tokens
+   ============================================ */
+@keyframes blur-fade-slide-in { 
+  0% { opacity: 0; filter: blur(10px); transform: translateY(10px); }
+  100% { opacity: 1; filter: blur(0px); transform: translateY(0px); }
+}
+
+@keyframes fade-slide-up { 
+  0% { opacity: 0; transform: translateY(4px); }
+  100% { opacity: 1; transform: translateY(0px); }
+}
+
+@keyframes fade-in { 
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+@keyframes slide-in-from-bottom { 
+  0% { opacity: 0; transform: translateY(24px); }
+  100% { opacity: 1; transform: translateY(0px); }
+}
+
+.animate-blur-fade-slide-in {
+  animation: blur-fade-slide-in 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animate-fade-slide-up {
+  animation: fade-slide-up 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animate-fade-in {
+  animation: fade-in 0.4s ease-out forwards;
+}
+
+.animate-slide-in-from-bottom {
+  animation: slide-in-from-bottom 0.7s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes shimmer-sweep {
+  0% { transform: translateX(-150%); }
+  45%, 100% { transform: translateX(250%); }
+}
+
+.animate-shimmer-sweep {
+  animation: shimmer-sweep 4s cubic-bezier(0.16, 1, 0.3, 1) infinite;
+}
+
+.resurf-window-shadow {
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.03), 0 16px 40px rgba(0, 0, 0, 0.05), 0 40px 100px rgba(0, 0, 0, 0.07);
+}
+
+.resurf-card-shadow {
+  box-shadow: 0 6px 14px -2px rgba(0, 0, 0, 0.02), 0 18px 32px -8px rgba(0, 0, 0, 0.02), 0 0 0 0.5px rgba(0, 0, 0, 0.06);
+}
+
