@@ -3,6 +3,7 @@
 # Tactile ⚡
 ### The Ultra-Low Latency Companion Display & Haptic Control Deck for macOS
 
+[![Website](https://img.shields.io/badge/Website-tactile.lakshitsoni.in-000000?style=for-the-badge&logo=googlechrome&logoColor=white)](https://tactile.lakshitsoni.in/)
 [![Next.js](https://img.shields.io/badge/Next.js-16.3-black?style=for-the-badge&logo=next.js)](https://nextjs.org/)
 [![React](https://img.shields.io/badge/React-19-61dafb?style=for-the-badge&logo=react)](https://react.dev/)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.0-3178c6?style=for-the-badge&logo=typescript)](https://www.typescriptlang.org/)
@@ -10,7 +11,9 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-emerald?style=for-the-badge)](LICENSE)
 [![Deploy with Vercel](https://img.shields.io/badge/Deploy-Vercel-000000?style=for-the-badge&logo=vercel)](https://vercel.com/new)
 
-**[Explore Live Demo & Showcase](https://tactile.lakshitsoni.in)** · **[Founder Manifesto](https://tactile.lakshitsoni.in/manifesto)** · **[Pricing](https://tactile.lakshitsoni.in/pricing)** · **[Roadmap](https://tactile.lakshitsoni.in/roadmap)**
+**🌐 Live Production Website**: **[https://tactile.lakshitsoni.in/](https://tactile.lakshitsoni.in/)**
+
+**[Explore Live Demo & Showcase](https://tactile.lakshitsoni.in/)** · **[Founder Manifesto](https://tactile.lakshitsoni.in/manifesto)** · **[Pricing](https://tactile.lakshitsoni.in/pricing)** · **[Roadmap](https://tactile.lakshitsoni.in/roadmap)**
 
 ---
 
@@ -70,8 +73,8 @@ By leveraging direct USB-C DMA streaming and local peer-to-peer Wi-Fi protocols,
 
 1. **Clone the repository**:
    ```bash
-   git clone https://github.com/lakshitsoni/tactile-web.git
-   cd tactile-web
+   git clone https://github.com/lakshitsoni26/Tactile-web.git
+   cd Tactile-web
    ```
 
 2. **Install dependencies**:
